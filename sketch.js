@@ -13,8 +13,6 @@ function preload()
 function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
-	wall1=createSprite(500,590,20,100)
-	wall2=createSprite(300,590,20,100)
 
 	paperSprite=createSprite(width/2, 80, 10,10);
 	paperSprite.scale=3
@@ -37,7 +35,8 @@ function setup() {
 
 
 	
-	
+	wall1=new Ground(500,590,20,100);
+	 wall2=new Ground(300,590,20,100);
 	ground1=new Ground(400,630,200,20);
   Engine.run(engine);
 }
@@ -53,7 +52,8 @@ function draw() {
   paperSprite.x= paperBody.position.x
   paperSprite.y= paperBody.position.y 
 
- 
+ wall1.display();
+wall2.display();
   ground1.display();
   drawSprites();
  
